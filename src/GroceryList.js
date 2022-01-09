@@ -1,10 +1,11 @@
 import { Component } from "react";
 import bag from './bag.png'
+import Swal from 'sweetalert2'
 
 export class GroceryList extends Component {
 	state = {
 		userInput: '',
-		groceryList: []
+		groceryList: [],
 
 	}	
 
@@ -14,7 +15,12 @@ export class GroceryList extends Component {
 
 	addItem(input) {
 		if(input === '') {
-			alert("Ups, add an item please!")
+
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Write your item please.',				
+			})
 		} else {
 		let listArray = this.state.groceryList;
 		listArray.push(input);
