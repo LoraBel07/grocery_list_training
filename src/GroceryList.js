@@ -15,7 +15,6 @@ export class GroceryList extends Component {
 
 	addItem(input) {
 		if(input === '') {
-
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
