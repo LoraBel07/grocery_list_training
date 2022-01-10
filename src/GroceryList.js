@@ -32,10 +32,15 @@ export class GroceryList extends Component {
 		this.setState({groceryList: listArray});
 	}
 
-	crossedWord(event) {
-		const li = event.target;
-		li.classList.toggle('crossed');
+	crossedWord(e) {
+		const liItem = e.target;
+		liItem.classList.toggle('crossed');
 	}
+	delOneItem(e) {
+        let ToBuyArray = this.state.groceryList;
+        ToBuyArray.splice(e.index, 1);
+        this.setState({groceryList: ToBuyArray});
+    }
 
 	onFormSubmit(e) {
 		e.preventDefault()
@@ -56,7 +61,7 @@ export class GroceryList extends Component {
 				</div>
 				<ul>
 					{this.state.groceryList.map((item, index) => (
-						<li onClick={this.crossedWord} key={index}>
+						<li onDoubleClick={(e) => this.delOneItem({index})} onClick={this.crossedWord} key={index}>
 							<img src={bag} alt="bag" width="20px" />
 							{item}</li>
 					))}					
