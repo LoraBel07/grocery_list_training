@@ -1,5 +1,5 @@
 <h2>  🛍🍏 This is app for for making a shopping list. 📝   </h2>
-<h3> Made while studying at "Can She Code Inc." </h3>
+<h3> This project was made while learning React. </h3>
 
 
 
